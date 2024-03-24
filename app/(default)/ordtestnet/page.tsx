@@ -10,13 +10,13 @@ export default function OrdinalsGuide() {
 
     const steps = [
         {
-            title: 'Step 1: Open a terminal (Linux and Mac) or Command Prompt (Windows) and navigate to the folder where you have ord.',
-            content: 'You can always check all available commands yourself by running ord --help.',
+            title: 'Step 1: Run and sync Bitcoin core testnet.',
+            content: '......',
             listItems: [
-                '<b>Note:</b> You can always check all available commands yourself by running ord --help.',
+                '<b>Note:</b> .',
             ],
-            windowsContent: 'cd C:\\Path\\To\\Ord',
-            linuxContent: 'cd /path/to/ord',
+            windowsContent: '',
+            linuxContent: '',
         }
     ];
 
