@@ -22,7 +22,7 @@ const stepsNoInstructions = [
     const steps = [
         {
             title: 'Step 1: Run and sync Bitcoin core on testnet.',
-            content: 'To run ord against testnet we first need to run Bitcoin core in testnet mode. This is done by adding the following to your bitcoin.conf file:',
+            content: 'To run ord against testnet we first need to run Bitcoin core in testnet mode. This is done by adding a -testnet flag to the start command:',
             listItems: [
                 '<b>Note:</b> It is possible to run both testnet and mainnet at the same time, but that requires to configuring different ports and data directories for the two setups.',
                 '<b>Note:</b> This guide expects that bitcoin core does not run on mainnet. So either quit your existing running node or configure a new datadir for testnet and also add -port=18333 (default port is 18332).',
