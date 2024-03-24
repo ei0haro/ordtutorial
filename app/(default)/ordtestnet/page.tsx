@@ -15,6 +15,7 @@ const stepsNoInstructions = [
         listItems: [
             'You can find it <a href="https://testnet.ordinals.com/runes" target="_blank" rel="noopener noreferrer" style="color: #3490dc; font-weight: bold;">here</a>.',
         ],
+        imageUrl: undefined
 
     },]
 
