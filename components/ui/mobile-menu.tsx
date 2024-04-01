@@ -89,6 +89,13 @@ export default function MobileMenu() {
               Ord on testnet
             </Link>
           </li>
+          <li>
+            <Link href="/ordsignet"
+                  className="flex font-medium w-full text-gray-400 hover:text-gray-200 py-2 justify-center"
+                  onClick={() => setMobileNavOpen(false)}>
+              Ord on signet
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

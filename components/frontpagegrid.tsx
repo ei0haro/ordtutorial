@@ -25,7 +25,14 @@ export default function FrontPageGrid() {
                     path="/ordtestnet"
                     imageSrc={Runes}
                     altText="testnet"
-                    text="Run ord on testnet and etch Runes"
+                    text="Run ord (v0.16.0) on testnet and etch Runes"
+                />
+
+                <ClickableImage
+                    path="/ordsignet"
+                    imageSrc={Runes}
+                    altText="signet"
+                    text="Run ord (v0.17.0) on signet and etch Runes"
                 />
 
                 <ClickableImage

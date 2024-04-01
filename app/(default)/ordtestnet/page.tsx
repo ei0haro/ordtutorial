@@ -1,9 +1,6 @@
 
 import React from "react";
-import RaspberryPi from "@/public/images/raspberrypi.jpg";
 import TopContentSubPages from "@/components/topcontentsubpages";
-import OpenSsl from "@/public/images/opensslguide.png";
-import OrdGit from "@/public/images/ordgit.png";
 import ExpandableStep from "@/components/guide/expandableStep";
 import Step from "@/components/guide/step";
 
@@ -19,18 +16,6 @@ const stepsNoInstructions = [
 
     },]
 
-    const startInstructions = [
-        {
-            title: 'Note, the guide below is for testnet, but it is also possible to run this against signet (which is another bitcoin testnet)..',
-            content: '',
-            listItems: [
-                '<b>Note:</b> To run on signet, just replace all commans that uses the -testnet flag with -signet.',
-                '<b>Note:</b> On ordstuff, there is a signet pre-indexed database you can download.',
-
-            ],
-            imageUrl: undefined
-
-        },]
 
     const steps = [
     {
@@ -100,14 +85,8 @@ const stepsNoInstructions = [
     return (
         <section>
 
-            <TopContentSubPages headerText="How to run ord against testnet and etch Runes" headerBody=""/>
-            <div className="space-y-8 p-4">
-                {startInstructions.map((step, index) => (
-                    <Step key={index} title={step.title} content={step.content}
-                          imageSrc={step.imageUrl}
-                          listItems={step.listItems}/>
-                ))}
-            </div>
+            <TopContentSubPages headerText="How to run ord against testnet and etch Runes (works for v 0.16.0)" headerBody=""/>
+
             <div className="space-y-8 p-4">
                 {steps.map((step, index) => (
                     <ExpandableStep key={index} title={step.title} content={step.content}

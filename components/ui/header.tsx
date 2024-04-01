@@ -27,6 +27,7 @@ export default function Header() {
                   <a href="/ord" className="hover:bg-gray-700 p-1 rounded text-gray-300">Ord tutorial</a>
                   <a href="/buildord" className="hover:bg-gray-700 p-1 rounded text-gray-300">Build ord for ARM64</a>
                   <a href="/ordtestnet" className="hover:bg-gray-700 p-1 rounded text-gray-300">Run ord on testnet</a>
+                  <a href="/ordsignet" className="hover:bg-gray-700 p-1 rounded text-gray-300">Run ord on signet</a>
               </div>
 
               <div className="md:hidden">

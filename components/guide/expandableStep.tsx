@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 interface ExpandableStepProps {
     title: string;
     content?: string;
-    windowsContent: string;
-    linuxContent: string;
+    windowsContent?: string;
+    linuxContent?: string;
     listItems?: string[];
 }
 
@@ -39,46 +39,55 @@ const ExpandableStep: React.FC<ExpandableStepProps> = ({ title, content, windows
                     ))}
                 </ul>
             )}
-            <div
-                onClick={() => setWindowsOpen(!isWindowsOpen)}
-                className="cursor-pointer px-4 py-2 mt-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300 flex justify-center items-center"
-            >
-                <div className="text-center">Windows</div>
-            </div>
-            {isWindowsOpen && (
-                <div className="bg-gray-800 rounded text-left p-4">
-                    <p dangerouslySetInnerHTML={createMarkup(windowsContent)}></p>
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation(); // Prevent the accordion from toggling
-                            copyToClipboard(windowsContent, 'windows');
-                        }}
-                        className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300"
+
+            {windowsContent && (
+                <>
+                    <div
+                        onClick={() => setWindowsOpen(!isWindowsOpen)}
+                        className="cursor-pointer px-4 py-2 mt-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300 flex justify-center items-center"
                     >
-                        {copyButtonText.windows}
-                    </button>
-                </div>
+                        <div className="text-center">Windows</div>
+                    </div>
+                    {isWindowsOpen && (
+                        <div className="bg-gray-800 rounded text-left p-4">
+                            <p dangerouslySetInnerHTML={createMarkup(windowsContent)}></p>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation(); // Prevent the accordion from toggling
+                                    copyToClipboard(windowsContent, 'windows');
+                                }}
+                                className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300"
+                            >
+                                {copyButtonText.windows}
+                            </button>
+                        </div>
+                    )}
+                </>
             )}
-            <div
-                onClick={() => setLinuxOpen(!isLinuxOpen)}
-                className="cursor-pointer px-4 py-2 mt-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300 flex justify-center items-center"
-            >
-                <div className="text-center">Linux and Mac</div>
-            </div>
-            {isLinuxOpen && (
-                <div className="bg-gray-800 rounded text-left p-4">
-                    <p dangerouslySetInnerHTML={createMarkup(linuxContent)}></p>
-                    <button
-                        onClick={(e) => {
-                            e.stopPropagation(); // Prevent the accordion from toggling
-                            copyToClipboard(linuxContent, 'linux');
-                        }}
-                        className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300"
-                    >
-                        {copyButtonText.linux}
-                    </button>
+            {linuxContent && (
+              <>
+                <div
+                    onClick={() => setLinuxOpen(!isLinuxOpen)}
+                    className="cursor-pointer px-4 py-2 mt-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300 flex justify-center items-center"
+                >
+                    <div className="text-center">Linux and Mac</div>
                 </div>
-            )}
+                {isLinuxOpen && linuxContent && (
+                    <div className="bg-gray-800 rounded text-left p-4">
+                        <p dangerouslySetInnerHTML={createMarkup(linuxContent)}></p>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation(); // Prevent the accordion from toggling
+                                copyToClipboard(linuxContent, 'linux');
+                            }}
+                            className="mt-2 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-700 transition duration-300"
+                        >
+                            {copyButtonText.linux}
+                        </button>
+                    </div>
+                )}
+            </>
+        )}
         </div>
     );
 };

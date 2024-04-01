@@ -1,0 +1,44 @@
+# example batch file
+
+# inscription modes:
+# - `same-sat`: inscribe on the same sat
+# - `satpoints`: inscribe on the first sat of specified satpoint's output
+# - `separate-outputs`: inscribe on separate postage-sized outputs
+# - `shared-output`: inscribe on a single output separated by postage
+mode: separate-outputs
+
+
+# postage for each inscription:
+postage: 524
+
+
+etching:
+  # rune name
+  rune: RUNE•GUARDIAN•NODE•RUNNERS
+  # allow subdividing super-unit into `10^divisibility` sub-units
+  divisibility: 2
+  # premine
+  premine: 100000.00
+  # total supply, must be equal to `premine + terms.cap * terms.amount`
+  supply: 100100000.00
+  # currency symbol
+  symbol: 🏃
+  # mint terms (optional)
+  terms:
+    # amount per mint
+    amount: 10000.00
+
+    # maximum number of mints
+
+    cap: 10000
+
+
+inscriptions:
+  # path to inscription content
+  - file: runeguardian.txt
+
+    # inscription metadata (optional)
+    metadata:
+      title: Delicious Mangos
+      description: >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam semper,
