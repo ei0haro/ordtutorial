@@ -19,8 +19,21 @@ const stepsNoInstructions = [
 
     },]
 
-    const steps = [
+    const startInstructions = [
         {
+            title: 'Note, the guide below is for testnet, but it is also possible to run this against signet (which is another bitcoin testnet)..',
+            content: '',
+            listItems: [
+                '<b>Note:</b> To run on signet, just replace all commans that uses the -testnet flag with -signet.',
+                '<b>Note:</b> On ordstuff, there is a signet pre-indexed database you can download.',
+
+            ],
+            imageUrl: undefined
+
+        },]
+
+    const steps = [
+    {
             title: 'Step 1: Run and sync Bitcoin core on testnet.',
             content: 'To run ord against testnet we first need to run Bitcoin core in testnet mode. This is done by adding a -testnet flag to the start command:',
             listItems: [
@@ -46,8 +59,8 @@ const stepsNoInstructions = [
                 '<b>Note:</b> Running the server will connect to your bitcoin core node and synchronize ord. You therefore need to specify the data dir of your bitcoin core node (the same folder you specified when starting bitcoin core on the testnet).',
                 '<b>Note:</b> The flag --index-runes is required to sync Runes and use the Rune specific commands.',
             ],
-            windowsContent: 'ord.exe --data-dir D:\\Path\\To\\Ord --bitcoin-data-dir D:\\btc\\data --index-runes --index-runes --testnet server',
-            linuxContent: './ord --data-dir /path/to/ord --bitcoin-data-dir /btc/data --index-runes --index-runes --testnet server',
+            windowsContent: 'ord.exe --data-dir D:\\Path\\To\\Ord --bitcoin-data-dir D:\\btc\\data --index-runes --testnet server',
+            linuxContent: './ord --data-dir /path/to/ord --bitcoin-data-dir /btc/data --index-runes --testnet server',
         },
         {
             title: 'Step 4: Create a wallet',
@@ -88,7 +101,13 @@ const stepsNoInstructions = [
         <section>
 
             <TopContentSubPages headerText="How to run ord against testnet and etch Runes" headerBody=""/>
-
+            <div className="space-y-8 p-4">
+                {startInstructions.map((step, index) => (
+                    <Step key={index} title={step.title} content={step.content}
+                          imageSrc={step.imageUrl}
+                          listItems={step.listItems}/>
+                ))}
+            </div>
             <div className="space-y-8 p-4">
                 {steps.map((step, index) => (
                     <ExpandableStep key={index} title={step.title} content={step.content}
@@ -99,8 +118,8 @@ const stepsNoInstructions = [
             <div className="space-y-8 p-4">
                 {stepsNoInstructions.map((step, index) => (
                     <Step key={index} title={step.title} content={step.content}
-                                   imageSrc={step.imageUrl}
-                                    listItems={step.listItems}/>
+                          imageSrc={step.imageUrl}
+                          listItems={step.listItems}/>
                 ))}
             </div>
         </section>

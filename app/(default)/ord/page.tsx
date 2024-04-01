@@ -23,7 +23,7 @@ export default function OrdinalsGuide() {
             listItems: [
                 '<b>Note:</b> Running the server will connect to your bitcoin core node and synchronize ord. You therefore need to specify the data dir of your bitcoin core node (the same folder you specified when starting bitcoin core).',
                 '<b>Note:</b> I usually save the ord database file in the same folder where I keep the ord executable (so I remember where it is), but you can put any dir you want. When upgrading you might need to delete it and re-index.',
-                '<b>Note:</b> The flag --index-runes does not do anything on main net yet, but you can run it now anyways. Later on you need to have it to support Rune commands.',
+
             ],
             windowsContent: 'ord.exe --data-dir C:\\Path\\To\\Ord --bitcoin-data-dir C:\\Path\\To\\BitcoinDataDir --index-runes server',
             linuxContent: './ord --data-dir /path/to/ord --bitcoin-data-dir /path/to/bitcoindatadir --index-runes server',
@@ -57,13 +57,22 @@ export default function OrdinalsGuide() {
             windowsContent: 'ord.exe --data-dir C:\\Path\\To\\Ord --bitcoin-data-dir C:\\Path\\To\\BitcoinDataDir wallet inscribe --destination XVERSE_ORDINALS_ADDRESS --fee-rate 20 --postage 546sat --file C:\\Path\\To\\Your\\File.txt',
             linuxContent: './ord --data-dir /path/to/ord --bitcoin-data-dir /path/to/bitcoindatadir wallet inscribe --destination XVERSE_ORDINALS_ADDRESS --fee-rate 20 --postage 546sat --file /path/to/your/file.txt',
         },
+        {
+            title: 'Step 6: Minting an existing Rune',
+            content: 'Minting a Rune only requires fee and the name of the Rune you want to mint. Note that the command will not work until after the halving.',
+            listItems: [
+                'Note, as of 0.17.0 there is no destination flag, so you mint your Runes to the ord wallet itself. To transfer the Runes you need to use the wallet send command',
+                ],
+            windowsContent: 'ord.exe --data-dir C:\\Path\\To\\Ord --bitcoin-data-dir C:\\Path\\To\\BitcoinDataDir wallet mint --fee-rate 200 --rune "UNCOMMON•GOODS"',
+            linuxContent: './ord --data-dir /path/to/ord --bitcoin-data-dir /path/to/bitcoindatadir wallet mint --fee-rate 200 --rune "UNCOMMON•GOODS"',
+        },
     ];
 
 
     return (
         <section>
 
-            <TopContentSubPages headerText="How to run ord and do basic commands (works for v0.16)" headerBody="Note: This guide requires you to have a bitcoin core node fully synched and running to work"/>
+            <TopContentSubPages headerText="How to run ord and do basic commands (works for v0.17)" headerBody="Note: This guide requires you to have a bitcoin core node fully synched and running to work"/>
 
             <div className="space-y-8 p-4">
                 {steps.map((step, index) => (
