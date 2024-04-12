@@ -14,7 +14,7 @@ export default function OrdinalsGuide() {
             content: 'The Raspberry Pi uses an ARM64 processor, but the official ord client does not release builds for this architecture. So, this guide will show you how to build it yourself.',
             listItems: [
                 '<b>Note:</b> I built this on Ubuntu, using WSL2 on Windows 11. I suppose a clean Linux Distro will work fine as well.',
-                '<b>Note:</b> If you just want to get ord that runs on ARM64, you can download my pre-built it here. <a href="/data/ord-0.17.1-aarch64-unknown-linux-gnu.zip" target="_blank" rel="noopener noreferrer" style="color: #3490dc; font-weight: bold;">ord-0.17.1-aarch64-unknown-linux-gnu.zip</a>',
+                '<b>Note:</b> If you just want to get ord that runs on ARM64, you can download my pre-built it here. <a href="/data/ord-0.18.1-aarch64-unknown-linux-gnu.zip" target="_blank" rel="noopener noreferrer" style="color: #3490dc; font-weight: bold;">ord-0.18.1-aarch64-unknown-linux-gnu.zip</a>',
             ],
         },
 
